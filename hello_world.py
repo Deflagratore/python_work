@@ -1,38 +1,11 @@
-lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+my_food = ['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream', 'sushi']
+friend_food = my_food[:]
 
-for number in lista:
-    print(number)
+friend_food.append('chocolate')
+my_food.append('kebab')
 
-lista2 = []
-n = 1_000_000
+print(f"My favorite foods are:{my_food}")
+print(f"My friend's favorite foods are:{friend_food}")
 
-for numero in range(1, n + 1):
-    lista2.append(numero)
-
-print(min(lista2))
-print(max(lista2))
-print(sum(lista2))
-
-lista3 = []
-
-for numero in range(1, 21, 2):
-    lista3.append(numero)
-
-print(lista3)
-
-lista4 = []
-
-for numero in range(3, 31, 3):
-    lista4.append(numero)
-
-print(lista4)
-
-lista5 = []
-
-for numero in range(1, 11):
-    lista5.append(numero ** 3)
-
-print(lista5)
-
-lista6 = [valores ** 3 for valores in range(1, 11)]
-print(lista6)
+print(f"My three favorite foods are: {my_food[:3]}")
+print(f"My least favorite foods are: {my_food[-3:]}")
