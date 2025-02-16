@@ -1,11 +1,12 @@
-my_food = ['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream', 'sushi']
-friend_food = my_food[:]
+ingredienti_disponibili = ["pomodoro", "mozzarella", "olio", "sale", "pepe", "salame"]
 
-friend_food.append('chocolate')
-my_food.append('kebab')
+ingredienti_richiesti = input("Inserisci gli ingredienti che vuoi: ").lower().split(", ")
 
-print(f"My favorite foods are:{my_food}")
-print(f"My friend's favorite foods are:{friend_food}")
+for ingrediente in ingredienti_richiesti:
+    if ingrediente not in ingredienti_disponibili:
+        print(f"Mi dispiace, non abbiamo {ingrediente}")
+        break
+    else:
+        print("Ingredienti aggiunti alla pizza")
 
-print(f"My three favorite foods are: {my_food[:3]}")
-print(f"My least favorite foods are: {my_food[-3:]}")
+print("Pizza pronta!")
