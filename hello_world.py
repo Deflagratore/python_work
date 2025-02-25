@@ -1,21 +1,22 @@
 from funzioni import make_album
 
-lista_album = []
+lista_album: list = []
 
-domanda = input("Vuoi inserire un album musicale? ").lower()
+domanda: str = input("Vuoi inserire un album musicale? ").lower()
 
 if domanda == "si":
-    active = True
+    active: bool = True
     
     while active:
-        input_artista = input("Inserisci il nome dell'artista: ")
-        input_album = input("Inserisci il nome dell'album: ")
-        input_tracce = input("Inserisci il numero di tracce dell'album: ")
+        """Ciclo con lo scopo di aggiungere l'input dell'utente in un dizionario"""
+        input_artista: str = input("Inserisci il nome dell'artista: ")
+        input_album: str = input("Inserisci il nome dell'album: ")
+        input_tracce: int = input("Inserisci il numero di tracce dell'album: ")
         lista_album.append(make_album(artista = input_artista, album = input_album, tracce = int(input_tracce)))
 
         print(lista_album)
 
-        domanda2 = input("Vuoi inserire un altro album? ").lower()
+        domanda2: str = input("Vuoi inserire un altro album? ").lower()
         if domanda2 == "no":
             active = False
         else:
