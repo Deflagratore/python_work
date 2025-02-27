@@ -1,13 +1,14 @@
-def magliette(tessuto: str, taglia: str, colore: str) -> str:
+def magliette(tessuto: str, taglia: str, colore: str):
     """Funzione per la creazione di magliette"""
     print(f"La maglietta è di tessuto {tessuto}, di taglia {taglia} e di colore {colore}")
+    return 
 
-def city_country(città: str, stato: str) -> str:
+def city_country(città: str, stato: str):
     """funzione che prende una città in uno stato"""
     frase = f"{città}, {stato}"
     return print(frase.title())
 
-def make_album(artista: str, album: str, tracce: int = None) -> dict:
+def make_album(artista: str, album: str, tracce: int) -> dict:
     """Funzione che crea un dizionario di album musicali"""
     albums: dict = {"Artista": artista, "Album": album}
     if tracce:
