@@ -1,0 +1,3 @@
+ciao mi chiamo federico è sto imparando python
+in python esistono variabili, funzioni, classi e tanto altro
+ma ancora non ho imparato tutto
