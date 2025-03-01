@@ -23,4 +23,7 @@ def make_album3(*albums: tuple) -> tuple:
     """Funzione che crea una tupla"""
     return albums
 
-
+def città(città: str, stato: str):
+    """Funzione che prende una città in uno stato"""
+    frase = f"{città}, {stato}"
+    return frase.title()
