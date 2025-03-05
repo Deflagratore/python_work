@@ -38,4 +38,54 @@ class Villain(Personaggi):
         super().__init__(nome, salute, attacco_b)
 
     def show_s(self):
-        print(f"L'avversario ha {self.salute} punti salute\n")   
+        print(f"L'avversario ha {self.salute} punti salute\n")  
+
+
+class Weapons:
+    """Sono delle armi equipaggiabili""" 
+
+    def __init__(self, damage: int, speed: int):
+        self.damage = damage
+        self.speed = speed
+
+    
+class Spada(Weapons):
+    """è una spada """
+
+    def __init__(self, damage, speed):
+        super().__init__(damage, speed)
+
+    def inflick_damage(self):
+        self.damage = random.randint(5, 25)
+        return self.damage
+    
+    def c_speed(self):
+        self.speed = random.randint(1, 5)
+        return self.speed
+    
+
+class Arco(Weapons):
+    """è un arco"""
+
+    def __init__(self, damage, speed):
+        super().__init__(damage, speed)
+
+    def inflick_damage(self):
+        self.damage = random.randint(0, 30)
+        return self.damage
+    
+    def c_speed(self):
+        self.speed = random.randint(1, 5)
+        return self.speed
+    
+def scegli_arma():
+    """{1:"spada", 2:"arco", 3:"pugni"}"""
+    numero = random.randint(1, 3)
+    if numero == 1:
+        arma = "spada"
+    elif numero == 2:
+        arma = "arco"
+    elif numero == 3:
+        arma = "pugni"
+    return arma
+    
