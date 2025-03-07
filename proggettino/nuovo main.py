@@ -67,30 +67,3 @@ while True:
         break
 
 print("\nProgramma chiuso")
-
-    
-
-
-
-
-
-
-
-
-
-
-
-if hero.salute >= villain.salute:
-    winner = nickname
-    loser = "Avversario"
-elif villain.salute >= hero.salute:
-    winner = "Avversario"
-    loser = nickname
-
-print(f"\nIl vincitore è {winner}, complimenti!")
-
-user_data = pd.get_players(winner=winner, loser=loser)
-
-dati_vittorie = pd.write_user_data(user_data=user_data, users=users, id=id)
-
-
