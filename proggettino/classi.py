@@ -20,9 +20,14 @@ class Personaggi:
         self.salute -= self.damage
         return self.salute
 
-    def attack(self):
-        self.damage = random.randint(1, 10)
-        return self.damage
+    def check_death(self, death=False):
+        lista = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10,
+                 -11, -12, -13, -14, -15, -16, -17, -18, -19,
+                 -20, -21, -22, -23, -24, -25, -26, -27, -28,
+                 -29, -30, -31, -32, -33, -34, -35, -36, -37]
+        if self.salute in lista:
+            death = True
+        return death
 
 
 class Hero(Personaggi):
@@ -30,6 +35,28 @@ class Hero(Personaggi):
 
     def __init__(self, nome, salute = 100, attacco_b = 10):
         super().__init__(nome, salute, attacco_b)
+
+    def attack(self):
+        try:
+            domanda = input("\nChe arma vuoi equipaggiare: spada, arco o pugni? ").lower()
+            if domanda == "spada":
+                self.damage = random.randint(5, 25)
+                return self.damage
+            elif domanda == "arco":
+                self.damage = random.randint(0, 30)
+                return self.damage
+            elif domanda == "pugni":
+                self.damage = random.randint(1, 15)
+                return self.damage
+            else:
+                self.damage = 1
+                return self.damage
+        except ValueError as e:
+            print("Inserire uno dei valori forniti")
+        
+        return self.damage
+            
+
 
 class Villain(Personaggi):
     """è un personaggio cattivo"""
@@ -40,52 +67,24 @@ class Villain(Personaggi):
     def show_s(self):
         print(f"L'avversario ha {self.salute} punti salute\n")  
 
-
-class Weapons:
-    """Sono delle armi equipaggiabili""" 
-
-    def __init__(self, damage: int, speed: int):
-        self.damage = damage
-        self.speed = speed
-
-    
-class Spada(Weapons):
-    """è una spada """
-
-    def __init__(self, damage, speed):
-        super().__init__(damage, speed)
-
-    def inflick_damage(self):
-        self.damage = random.randint(5, 25)
+    def attack(self):
+        domanda = random.randint(1, 3)
+        if domanda == 1:
+            self.damage = random.randint(5, 25)
+            return self.damage
+        elif domanda == 2:
+            self.damage = random.randint(0, 30)
+            return self.damage
+        elif domanda == 3:
+            self.damage = random.randint(1, 15)
+            return self.damage
         return self.damage
-    
-    def c_speed(self):
-        self.speed = random.randint(1, 5)
-        return self.speed
+        
+
+
     
 
-class Arco(Weapons):
-    """è un arco"""
 
-    def __init__(self, damage, speed):
-        super().__init__(damage, speed)
 
-    def inflick_damage(self):
-        self.damage = random.randint(0, 30)
-        return self.damage
     
-    def c_speed(self):
-        self.speed = random.randint(1, 5)
-        return self.speed
-    
-def scegli_arma():
-    """{1:"spada", 2:"arco", 3:"pugni"}"""
-    numero = random.randint(1, 3)
-    if numero == 1:
-        arma = "spada"
-    elif numero == 2:
-        arma = "arco"
-    elif numero == 3:
-        arma = "pugni"
-    return arma
     

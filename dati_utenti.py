@@ -39,7 +39,7 @@ while active:
         continue
 
     user_data = fp.get_user_data(name, surname, age)
-    users = fp.write_user_data(user_data, users, id)
+    users = fp.write_user_data(user_data=user_data, users=users, id=id)
     id += 1
 
     domanda = input("Vuoi inserire un altro utente? (s/n) ")
